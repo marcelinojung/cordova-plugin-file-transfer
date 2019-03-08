@@ -384,13 +384,13 @@ public class FileTransfer extends CordovaPlugin {
                     }
 
                     beforeData.append(LINE_START).append(BOUNDARY).append(LINE_END);
-                    if(fileKey.isEmpty()){
+                    if(!fileKey.isEmpty()){
                       beforeData.append("Content-Disposition: form-data; name=\"").append(fileKey).append("\";");
                     }
-                    if(fileName.isEmpty()){
+                    if(!fileName.isEmpty()){
                       beforeData.append(" filename=\"").append(fileName).append('"').append(LINE_END);
                     }
-                    if(mimeType.isEmpty()){
+                    if(!mimeType.isEmpty()){
                       beforeData.append("Content-Type: ").append(mimeType).append(LINE_END).append(LINE_END);
                     }
                     byte[] beforeDataBytes = beforeData.toString().getBytes("UTF-8");
